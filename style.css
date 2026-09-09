@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Gradients */
+.gradient-bg {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.card-gradient {
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+}
+
+/* Cards */
+.car-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.car-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* Animations */
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.pulse-ring {
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+.slide-in {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.glow {
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
+}
+
+.table-row:hover {
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.1) 0%, transparent 100%);
+}
+
+.image-placeholder {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  border: 3px dashed #94a3b8;
+}
+/* Fleet Section Fix */
+.fleet-card {
+  height: 180px;              /* Same height for all */
+  background: #f8fafc;        /* Light background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #cbd5e1; /* Optional dotted border */
+}
+
+.fleet-img {
+  max-height: 140px;   /* Keeps car inside box */
+  max-width: 90%;
+  object-fit: contain; /* Prevent stretching */
+}
+.fleet-card:hover img {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  z-index: 9999;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+}
+/* Floating Call Button */
+.call-float {
+  position: fixed;
+  bottom: 100px; /* above WhatsApp */
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #f97316; /* orange */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  z-index: 9999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.call-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+.call-float svg {
+  width: 28px;
+  height: 28px;
+}
+/* Pulse animation for Call button */
+.call-float::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(249, 115, 22, 0.6); /* orange glow */
+  border-radius: 50%;
+  z-index: -1;
+  animation: callPulse 1.8s infinite;
+}
+
+@keyframes callPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Page reveal animations */
+.reveal-up {
+  animation: reveal-up 0.7s ease-out both;
+}
+
+.reveal-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.reveal-delay-2 {
+  animation-delay: 0.24s;
+}
+
+.stagger-grid > * {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.stagger-grid > .is-visible {
+  animation: reveal-up 0.65s ease-out both;
+}
+
+.stagger-grid > :nth-child(2).is-visible { animation-delay: 0.1s; }
+.stagger-grid > :nth-child(3).is-visible { animation-delay: 0.2s; }
+.stagger-grid > :nth-child(4).is-visible { animation-delay: 0.3s; }
+.stagger-grid > :nth-child(5).is-visible { animation-delay: 0.4s; }
+.stagger-grid > :nth-child(6).is-visible { animation-delay: 0.5s; }
+.stagger-grid > :nth-child(7).is-visible { animation-delay: 0.6s; }
+.stagger-grid > :nth-child(8).is-visible { animation-delay: 0.7s; }
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up,
+  .stagger-grid > * {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
