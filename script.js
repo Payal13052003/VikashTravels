@@ -12,14 +12,15 @@ let config = { ...defaultConfig };
 function onConfigChange(updatedConfig) {
   document.body.style.fontFamily = 'Poppins, sans-serif';
 
-  document.getElementById('nav-company-name').textContent =
-    updatedConfig.company_name || defaultConfig.company_name;
+  const companyName = updatedConfig.company_name || defaultConfig.company_name;
+  const tagline = updatedConfig.tagline || defaultConfig.tagline;
+  const navCompanyName = document.getElementById('nav-company-name');
+  const navTagline = document.getElementById('nav-tagline');
+  const footerCompanyName = document.getElementById('footer-company-name');
 
-  document.getElementById('nav-tagline').textContent =
-    updatedConfig.tagline || defaultConfig.tagline;
-
-  document.getElementById('footer-company-name').textContent =
-    updatedConfig.company_name || defaultConfig.company_name;
+  if (navCompanyName) navCompanyName.textContent = companyName;
+  if (navTagline) navTagline.textContent = tagline;
+  if (footerCompanyName) footerCompanyName.textContent = companyName;
 }
 
 /* ---------- FORM SUBMIT → WHATSAPP ---------- */
