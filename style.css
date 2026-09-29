@@ -215,6 +215,45 @@ nav .max-w-7xl {
   line-height: 1.7;
 }
 
+.about-hero { overflow: hidden; padding: 5.5rem 0 6rem; }
+.about-banner { background: #eaf3f8; }
+.about-banner-image { display: block; width: 100%; height: auto; max-height: 620px; object-fit: cover; }
+.about-hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr); gap: 5rem; align-items: center; }
+.about-hero-copy h1 { max-width: 680px; margin: 1rem 0 1.25rem; color: #fff; font-size: clamp(2.8rem, 6vw, 5.6rem); line-height: 1.02; font-weight: 800; letter-spacing: -0.02em; }
+.about-hero-copy p { max-width: 600px; color: #d1d5db; font-size: 1.15rem; line-height: 1.8; }
+.about-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; margin-top: 2rem; }
+.about-text-link { color: #fbbf24; font-weight: 700; }
+.about-text-link:hover { color: #fff; }
+.about-profile-wrap { position: relative; max-width: 430px; margin-left: auto; }
+.about-profile-frame { padding: 0.8rem; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 2rem; background: rgba(255, 255, 255, 0.08); transform: rotate(2deg); }
+.about-profile-image { display: block; width: 100%; aspect-ratio: 4 / 5; border-radius: 1.45rem; object-fit: cover; }
+.about-profile-note { position: absolute; right: -2rem; bottom: 2rem; display: grid; gap: 0.25rem; max-width: 245px; padding: 1rem 1.15rem; border-left: 4px solid #f59e0b; border-radius: 0.8rem; background: #fff; box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22); transform: rotate(-2deg); }
+.about-profile-note strong { color: #111827; font-size: 0.95rem; }
+.about-profile-note span { color: #6b7280; font-size: 0.78rem; line-height: 1.5; }
+.about-trust-strip { background: #f59e0b; color: #451a03; }
+.about-trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding: 1.25rem 1rem; }
+.about-trust-grid div { display: grid; gap: 0.2rem; border-left: 1px solid rgba(69, 26, 3, 0.25); padding-left: 1rem; }
+.about-trust-grid div:first-child { border-left: 0; padding-left: 0; }
+.about-trust-grid strong { font-size: 0.92rem; }
+.about-trust-grid span { color: #78350f; font-size: 0.74rem; }
+.about-story-section, .about-values-section { padding: 6rem 0; background: #fff; }
+.about-story-grid { display: grid; grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr); gap: 6rem; align-items: start; }
+.about-section-heading h2 { max-width: 520px; margin: 0.9rem 0 1rem; color: #111827; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1; font-weight: 800; }
+.about-section-heading > p { max-width: 450px; color: #6b7280; line-height: 1.8; }
+.about-eyebrow { background: #fef3c7; color: #b45309; }
+.about-story-copy { padding-top: 0.4rem; }
+.about-values-section { background: #f8fafc; }
+.about-section-heading.centered { text-align: center; }
+.about-section-heading.centered h2 { margin-right: auto; margin-left: auto; }
+.about-values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.about-value { min-height: 230px; border-top: 3px solid #f59e0b; padding: 1.5rem 0.5rem 0; }
+.about-value-number { color: #d97706; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; }
+.about-value h3 { margin: 1.25rem 0 0.7rem; color: #111827; font-size: 1.35rem; font-weight: 700; }
+.about-value p { max-width: 300px; color: #6b7280; line-height: 1.75; }
+.about-cta-section { padding: 4rem 0; background: #fff; }
+.about-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-radius: 1.5rem; background: #16213e; padding: 2.5rem 3rem; }
+.about-cta-inner h2 { margin-top: 0.8rem; color: #fff; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.1; font-weight: 800; }
+
 .eyebrow {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -492,6 +531,20 @@ nav .max-w-7xl {
   .inner-hero p {
     font-size: 1rem;
   }
+
+  .about-hero { padding: 4.2rem 0 4.5rem; }
+  .about-banner-image { height: 230px; object-fit: cover; object-position: center; }
+  .about-hero-grid, .about-story-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-hero-copy h1 { font-size: clamp(2.5rem, 13vw, 3.8rem); }
+  .about-hero-copy p { font-size: 1rem; }
+  .about-profile-wrap { max-width: 340px; margin: 0 auto; }
+  .about-profile-note { right: -0.5rem; bottom: 1rem; }
+  .about-trust-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; padding: 1.25rem 1rem; }
+  .about-trust-grid div:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .about-story-section, .about-values-section { padding: 4rem 0; }
+  .about-values-grid { grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; }
+  .about-value { min-height: auto; }
+  .about-cta-inner { align-items: flex-start; flex-direction: column; padding: 2rem 1.5rem; }
 
   #home .grid,
   #booking .grid,
