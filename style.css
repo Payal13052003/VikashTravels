@@ -533,7 +533,7 @@ nav .max-w-7xl {
   }
 
   .about-hero { padding: 4.2rem 0 4.5rem; }
-  .about-banner-image { height: 230px; object-fit: cover; object-position: center; }
+  .about-banner-image { height: auto; max-height: none; object-fit: contain; }
   .about-hero-grid, .about-story-grid { grid-template-columns: 1fr; gap: 3rem; }
   .about-hero-copy h1 { font-size: clamp(2.5rem, 13vw, 3.8rem); }
   .about-hero-copy p { font-size: 1rem; }
