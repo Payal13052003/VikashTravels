@@ -1,3 +1,39 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+
+  const navRow = nav.querySelector('.flex.items-center.justify-between');
+  const desktopMenu = nav.querySelector('[class*="md:flex"]');
+
+  if (!navRow || !desktopMenu || nav.querySelector('.mobile-nav-toggle')) return;
+
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'mobile-nav-toggle';
+  toggle.setAttribute('aria-label', 'Toggle menu');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.innerHTML = '<span></span><span></span><span></span>';
+
+  const panel = document.createElement('div');
+  panel.className = 'mobile-nav-panel';
+  panel.innerHTML = `<div class="mobile-nav-links">${desktopMenu.innerHTML}</div>`;
+
+  navRow.appendChild(toggle);
+  nav.appendChild(panel);
+
+  toggle.addEventListener('click', () => {
+    const isOpen = panel.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!panel.contains(event.target) && !toggle.contains(event.target)) {
+      panel.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
+
 /* ---------- CONFIG ---------- */
 const defaultConfig = {
   company_name: 'Vikash Travels',
@@ -235,16 +271,8 @@ function renderReviews(reviews) {
     .join('');
 }
 
-async function fetchReviews() {
-  try {
-    const response = await fetch('/api/reviews');
-    if (!response.ok) throw new Error('Failed to load reviews');
-    const reviews = await response.json();
-    renderReviews(reviews.length ? reviews : staticReviews);
-  } catch (error) {
-    console.error(error);
-    renderReviews([...staticReviews, ...getLocalReviews()]);
-  }
+function fetchReviews() {
+  renderReviews([...staticReviews, ...getLocalReviews()]);
 }
 
 function updateRatingUI(value) {
@@ -275,48 +303,21 @@ async function handleReviewSubmit(event) {
     return;
   }
 
-  try {
-    const response = await fetch('/api/reviews', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name,
-        city,
-        rating: selectedReviewRating,
-        text
-      })
-    });
+  const localReview = {
+    name,
+    city,
+    rating: selectedReviewRating,
+    text,
+    verified: false,
+    date: new Date().toISOString().split('T')[0]
+  };
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.error || 'Failed to submit review');
-    }
-
-    document.getElementById('reviewForm')?.reset();
-    selectedReviewRating = 0;
-    updateRatingUI(0);
-    await fetchReviews();
-    alert('Thank you! Your review has been submitted successfully.');
-  } catch (error) {
-    console.error(error);
-    const localReview = {
-      name,
-      city,
-      rating: selectedReviewRating,
-      text,
-      verified: false,
-      date: new Date().toISOString().split('T')[0]
-    };
-
-    saveLocalReview(localReview);
-    document.getElementById('reviewForm')?.reset();
-    selectedReviewRating = 0;
-    updateRatingUI(0);
-    renderReviews([...staticReviews, ...getLocalReviews()]);
-    alert('Your review was saved on this browser. It will be shared with everyone when the backend is connected.');
-  }
+  saveLocalReview(localReview);
+  document.getElementById('reviewForm')?.reset();
+  selectedReviewRating = 0;
+  updateRatingUI(0);
+  renderReviews([...staticReviews, ...getLocalReviews()]);
+  alert('Thank you! Your review has been saved on this browser and is now visible on the site.');
 }
 
 /* ---------- DATE RESTRICTION & INIT ---------- */

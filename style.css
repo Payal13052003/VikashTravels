@@ -6,10 +6,99 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, label {
   font-family: inherit;
+}
+
+.mobile-nav-toggle {
+  display: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 0.75rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.28rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.mobile-nav-toggle span {
+  display: block;
+  width: 1.15rem;
+  height: 2px;
+  border-radius: 999px;
+  background: #fff;
+}
+
+.mobile-nav-panel {
+  display: none;
+  background: rgba(15, 23, 42, 0.96);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-nav-panel.is-open {
+  display: block;
+}
+
+.mobile-nav-links {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.75rem 1rem 1rem;
+}
+
+.mobile-nav-links a {
+  display: block;
+  padding: 0.7rem 0.75rem;
+  border-radius: 0.75rem;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.mobile-nav-links a:hover {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+}
+
+@media (max-width: 767px) {
+  nav .w-20.h-20 {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  nav h1 {
+    font-size: 1.15rem;
+    line-height: 1.2;
+  }
+
+  nav p {
+    font-size: 0.62rem;
+    line-height: 1.2;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex;
+  }
+
+  .mobile-nav-links {
+    padding: 0.8rem 0.9rem 1rem;
+  }
+
+  .mobile-nav-links a {
+    padding: 0.75rem 0.8rem;
+    font-size: 0.95rem;
+  }
 }
 
 /* Gradients */
@@ -369,11 +458,56 @@ h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, label {
 
 @media (max-width: 767px) {
   .inner-hero {
-    padding: 5rem 0 4rem;
+    padding: 4.2rem 0 3.2rem;
   }
 
   .inner-hero h1 {
-    font-size: 3rem;
+    font-size: clamp(2.25rem, 10vw, 3.1rem);
+    line-height: 1.05;
+  }
+
+  .inner-hero p {
+    font-size: 1rem;
+  }
+
+  #home .grid,
+  #booking .grid,
+  #services .stagger-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #booking .grid.grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  #home .max-w-md.aspect-square {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  #home h2 {
+    font-size: 2.2rem;
+    line-height: 1.1;
+  }
+
+  #home .text-xl.md\:text-2xl {
+    font-size: 1.1rem;
+  }
+
+  .fleet-card {
+    height: 160px;
+  }
+
+  .whatsapp-float,
+  .call-float {
+    width: 56px;
+    height: 56px;
+    bottom: 18px;
+    right: 18px;
+  }
+
+  .call-float {
+    bottom: 88px;
   }
 }
 /* Fleet Section Fix */
