@@ -26,6 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.setAttribute('aria-expanded', String(isOpen));
   });
 
+  panel.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      panel.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
   document.addEventListener('click', (event) => {
     if (!panel.contains(event.target) && !toggle.contains(event.target)) {
       panel.classList.remove('is-open');
