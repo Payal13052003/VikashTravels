@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>City-to-City Cab Prices Across Chhattisgarh | Vikash Travels</title>
-  <meta name="description" content="Compare estimated one-way and round-trip taxi fares between cities across Chhattisgarh with Vikash Travels. Choose your pickup, destination, and vehicle.">
+  <meta name="description" content="Compare estimated one-way and round-trip taxi fares between cities across Chhattisgarh with Vikash Travels.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://vikashtravels.com/city-prices.html">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -27,51 +27,71 @@
     </nav>
 
     <main>
-      <section class="inner-hero gradient-bg">
-        <div class="max-w-4xl mx-auto px-4">
-          <span class="eyebrow">Chhattisgarh City Prices</span>
-          <h1>City-to-city cab prices</h1>
-          <p>Choose any pickup and destination across Chhattisgarh. Compare estimated one-way and round-trip fares before contacting us for the final quote.</p>
+      <section class="pricing-hero gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 pricing-hero-grid">
+          <div class="pricing-hero-copy reveal-up">
+            <span class="eyebrow">Simple, clear estimates</span>
+            <h1>Plan your route before you travel.</h1>
+            <p>Choose your cities, travel type, and vehicle to see a starting fare estimate for journeys across Chhattisgarh.</p>
+            <div class="pricing-hero-points"><span>One-way and round-trip options</span><span>Sedan, premium, and group vehicles</span><span>Personal booking support across India</span></div>
+          </div>
+          <div class="pricing-hero-mark reveal-up reveal-delay-1"><span>FARE</span><strong>PLANNER</strong><small>Choose your route</small></div>
         </div>
       </section>
 
-      <section class="py-16 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4">
-          <div id="selectedRoute" class="route-highlight mb-10"></div>
-          <div class="route-calculator bg-white rounded-3xl shadow-xl p-6 md:p-8">
-            <div class="grid md:grid-cols-2 gap-5">
-              <div><label for="priceFrom">Pickup city</label><select id="priceFrom"></select></div>
-              <div><label for="priceTo">Destination city</label><select id="priceTo"></select></div>
-              <div><label for="priceTripType">Travel type</label><select id="priceTripType"><option value="oneWay">One-way</option><option value="roundTrip">Round-trip</option></select></div>
-              <div><label for="priceVehicle">Vehicle</label><select id="priceVehicle"><option value="sedan">Sedan</option><option value="premium">Premium car</option><option value="group">Group vehicle</option></select></div>
+      <section class="pricing-calculator-section">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="pricing-section-heading"><span class="eyebrow about-eyebrow">Route calculator</span><h2>See your estimated fare.</h2><p>Start with your pickup and destination. We will confirm the final amount after checking your date, route, and availability.</p></div>
+          <div class="pricing-calculator-layout">
+            <div class="pricing-calculator route-calculator">
+              <div class="pricing-form-heading"><span class="pricing-step">01</span><div><h3>Build your journey</h3><p>Choose the details below.</p></div></div>
+              <div class="grid md:grid-cols-2 gap-5">
+                <div><label for="priceFrom">Pickup city</label><select id="priceFrom"></select></div>
+                <div><label for="priceTo">Destination city</label><select id="priceTo"></select></div>
+                <div><label for="priceTripType">Travel type</label><select id="priceTripType"><option value="oneWay">One-way</option><option value="roundTrip">Round-trip</option></select></div>
+                <div><label for="priceVehicle">Vehicle</label><select id="priceVehicle"><option value="sedan">Sedan</option><option value="premium">Premium car</option><option value="group">Group vehicle</option></select></div>
+              </div>
+              <div id="fareResult" class="fare-result mt-7" aria-live="polite">Select pickup and destination cities to see an estimated fare.</div>
+              <a id="routeBooking" href="contact.html#booking" class="btn-primary inline-flex text-white font-bold px-7 py-3 rounded-xl mt-6">Book this route <span class="ml-2" aria-hidden="true">&#8594;</span></a>
             </div>
-            <div id="fareResult" class="fare-result mt-7" aria-live="polite">Select pickup and destination cities to see an estimated fare.</div>
-            <a id="routeBooking" href="contact.html#booking" class="btn-primary inline-flex text-white font-bold px-7 py-3 rounded-xl mt-6">Book this route</a>
+            <aside class="pricing-side-note">
+              <span class="pricing-step">02</span><h3>We confirm the details</h3><p>The calculator shows a starting estimate. Our team confirms availability and the final fare based on your actual journey.</p>
+              <ul><li>Travel date and time</li><li>Passenger and luggage count</li><li>Tolls, parking, and waiting time</li><li>Vehicle availability and route conditions</li></ul>
+              <a href="https://wa.me/918770813605" target="_blank" rel="noopener">Ask on WhatsApp <span aria-hidden="true">&#8594;</span></a>
+            </aside>
           </div>
-          <div class="price-note mt-8"><strong>Important fare note</strong><p>These are starting prices for standard travel and may change based on vehicle type, travel date, passenger count, tolls, parking, waiting time, and route conditions. We will contact you to confirm availability and the final fare. No direct payment is collected through this website. Payment is taken only after the ride is completed.</p><p lang="hi">ये शुरुआती किराये हैं। वाहन, तारीख, यात्रियों की संख्या, टोल, पार्किंग और प्रतीक्षा समय के अनुसार अंतिम किराया बदल सकता है। यात्रा पूरी होने के बाद ही भुगतान लिया जाता है।</p></div>
+          <div class="india-booking-query">
+            <div><span class="eyebrow about-eyebrow">Personal booking across India</span><h3>Need a car anywhere in India?</h3><p>Tell us your city, travel dates, passenger count, and vehicle preference. We will raise your travel query and help arrange a suitable car.</p></div>
+            <div class="india-booking-actions"><a href="contact.html#booking" class="btn-primary text-white font-bold px-6 py-3 rounded-xl">Raise a travel query <span class="ml-2" aria-hidden="true">&#8594;</span></a><a href="https://wa.me/918770813605" target="_blank" rel="noopener" class="india-whatsapp-link">Ask on WhatsApp</a></div>
+          </div>
         </div>
+      </section>
+
+      <section class="pricing-vehicles-section">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="pricing-section-heading centered"><span class="eyebrow about-eyebrow">Vehicle choices</span><h2>Choose comfort for your journey.</h2></div>
+          <div class="pricing-vehicle-grid"><article><span class="pricing-vehicle-label">Everyday travel</span><h3>Sedan</h3><p>Efficient and comfortable for solo travellers, couples, and small families.</p></article><article><span class="pricing-vehicle-label">Extra comfort</span><h3>Premium car</h3><p>More space and a relaxed ride for longer routes, guests, and special plans.</p></article><article><span class="pricing-vehicle-label">Travel together</span><h3>Group vehicle</h3><p>Practical seating and luggage space for families, functions, and group journeys.</p></article></div>
+        </div>
+      </section>
+
+      <section class="pricing-note-section">
+        <div class="max-w-5xl mx-auto px-4 price-note"><strong>Important fare note</strong><p>Displayed prices are starting estimates for standard travel. The final fare may change based on vehicle type, travel date, passenger count, tolls, parking, waiting time, and route conditions. No direct payment is collected through this website. Payment is taken only after the ride is completed.</p><p lang="hi">दिखाई गई कीमतें सामान्य यात्रा के लिए शुरुआती अनुमान हैं। अंतिम किराया वाहन के प्रकार, यात्रा की तारीख, यात्रियों की संख्या, टोल, पार्किंग, प्रतीक्षा समय और मार्ग की स्थिति के आधार पर बदल सकता है। इस वेबसाइट के माध्यम से कोई सीधा भुगतान नहीं लिया जाता। भुगतान यात्रा पूरी होने के बाद ही लिया जाता है।</p></div>
       </section>
     </main>
 
     <footer class="gradient-bg py-10">
       <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-sm">
-        <div><h2 class="text-white text-xl font-bold mb-3">Vikash Travels</h2><p class="text-gray-400">City-to-city cab service across Chhattisgarh, with clear fare estimates and personal booking support.</p></div>
-        <div><h3 class="text-white font-semibold mb-3">Explore</h3><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="fleet.html">Pricing</a><a href="reviews.html">Reviews</a></div></div>
+        <div><h2 class="text-white text-xl font-bold mb-3">Vikash Travels</h2><p class="text-gray-400">City-to-city cab service across Chhattisgarh, with clear fare estimates and personal booking support across India.</p></div>
+        <div><h3 class="text-white font-semibold mb-3">Explore</h3><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="reviews.html">Reviews</a></div></div>
         <div><h3 class="text-white font-semibold mb-3">Connect</h3><div class="footer-links"><a href="tel:+918770813605">Call us</a><a href="https://wa.me/918770813605" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:vikashtravels12@gmail.com">Email us</a><a href="contact.html#booking">Book a cab</a></div></div>
       </div>
-      <p class="copyright">© 2026 Vikash Travels. All rights reserved.</p>
+      <p class="copyright">&copy; 2026 Vikash Travels. All rights reserved.</p>
     </footer>
   </div>
   <script src="script.js"></script>
   <script>
     const cities = {
-      Korba: [22.35, 82.68], Raipur: [21.25, 81.63], Bilaspur: [22.08, 82.14],
-      Bhilai: [21.21, 81.38], Raigarh: [21.90, 83.40], Ambikapur: [23.12, 83.20],
-      Jagdalpur: [19.08, 82.02], Rajnandgaon: [21.10, 81.03], Durg: [21.19, 81.28],
-      Dhamtari: [20.71, 81.55], Mahasamund: [21.11, 82.10], Kanker: [20.27, 81.49],
-      'Janjgir-Champa': [22.01, 82.58], Kawardha: [22.01, 81.23], Kanker: [20.27, 81.49],
-      Kondagaon: [19.59, 81.67], Sukma: [18.39, 81.66], Dantewada: [18.90, 81.35],
-      Jashpur: [22.89, 84.14], Surajpur: [23.21, 82.87]
+      Korba: [22.35, 82.68], Raipur: [21.25, 81.63], Bilaspur: [22.08, 82.14], Bhilai: [21.21, 81.38], Raigarh: [21.90, 83.40], Ambikapur: [23.12, 83.20], Jagdalpur: [19.08, 82.02], Rajnandgaon: [21.10, 81.03], Durg: [21.19, 81.28], Dhamtari: [20.71, 81.55], Mahasamund: [21.11, 82.10], Kanker: [20.27, 81.49], 'Janjgir-Champa': [22.01, 82.58], Kawardha: [22.01, 81.23], Kondagaon: [19.59, 81.67], Sukma: [18.39, 81.66], Dantewada: [18.90, 81.35], Jashpur: [22.89, 84.14], Surajpur: [23.21, 82.87]
     };
     const query = new URLSearchParams(window.location.search);
     const fromSelect = document.getElementById('priceFrom');
@@ -81,44 +101,17 @@
     const fareResult = document.getElementById('fareResult');
     const routeBooking = document.getElementById('routeBooking');
     const cityNames = Object.keys(cities);
-
-    cityNames.forEach((cityName) => {
-      fromSelect.add(new Option(cityName, cityName));
-      toSelect.add(new Option(cityName, cityName));
-    });
-
+    cityNames.forEach((cityName) => { fromSelect.add(new Option(cityName, cityName)); toSelect.add(new Option(cityName, cityName)); });
     fromSelect.value = query.get('from') || 'Korba';
     toSelect.value = query.get('city') || query.get('to') || 'Raipur';
-
-    function calculateDistance(firstCity, secondCity) {
-      const [firstLat, firstLon] = cities[firstCity];
-      const [secondLat, secondLon] = cities[secondCity];
-      const latDistance = (secondLat - firstLat) * 111;
-      const lonDistance = (secondLon - firstLon) * 104;
-      return Math.max(10, Math.round(Math.sqrt((latDistance ** 2) + (lonDistance ** 2)) * 1.25));
-    }
-
+    function calculateDistance(firstCity, secondCity) { const [firstLat, firstLon] = cities[firstCity]; const [secondLat, secondLon] = cities[secondCity]; const latDistance = (secondLat - firstLat) * 111; const lonDistance = (secondLon - firstLon) * 104; return Math.max(10, Math.round(Math.sqrt((latDistance ** 2) + (lonDistance ** 2)) * 1.25)); }
     function updateFare() {
-      const fromCity = fromSelect.value;
-      const toCity = toSelect.value;
-      const selectedVehicle = vehicle.value;
-      if (fromCity === toCity) {
-        fareResult.textContent = 'Please choose two different cities.';
-        routeBooking.classList.add('pointer-events-none', 'opacity-50');
-        return;
-      }
-      const distance = calculateDistance(fromCity, toCity);
-      const vehicleRate = { sedan: 14, premium: 18, group: 24 }[selectedVehicle];
-      const vehicleName = { sedan: 'Sedan', premium: 'Premium car', group: 'Group vehicle' }[selectedVehicle];
-      const calculatedFare = Math.max(1200, Math.ceil((distance * vehicleRate) / 100) * 100);
-      const isKorbaRaipurSedan = selectedVehicle === 'sedan' && ((fromCity === 'Korba' && toCity === 'Raipur') || (fromCity === 'Raipur' && toCity === 'Korba'));
-      const oneWayFare = isKorbaRaipurSedan ? 3000 : calculatedFare;
-      const fare = tripType.value === 'roundTrip' ? oneWayFare * 2 : oneWayFare;
-      fareResult.innerHTML = `<strong>${fromCity} to ${toCity}</strong><span>${tripType.options[tripType.selectedIndex].text} estimate: <b>₹${fare.toLocaleString('en-IN')}</b></span><small>Approx. ${distance} km by road • ${vehicleName}</small>`;
-      routeBooking.href = `contact.html?from=${encodeURIComponent(fromCity)}&destination=${encodeURIComponent(toCity)}#booking`;
-      routeBooking.classList.remove('pointer-events-none', 'opacity-50');
+      const fromCity = fromSelect.value; const toCity = toSelect.value; const selectedVehicle = vehicle.value;
+      if (fromCity === toCity) { fareResult.textContent = 'Please choose two different cities.'; routeBooking.classList.add('pointer-events-none', 'opacity-50'); return; }
+      const distance = calculateDistance(fromCity, toCity); const vehicleRate = { sedan: 14, premium: 18, group: 24 }[selectedVehicle]; const vehicleName = { sedan: 'Sedan', premium: 'Premium car', group: 'Group vehicle' }[selectedVehicle]; const calculatedFare = Math.max(1200, Math.ceil((distance * vehicleRate) / 100) * 100); const isKorbaRaipurSedan = selectedVehicle === 'sedan' && ((fromCity === 'Korba' && toCity === 'Raipur') || (fromCity === 'Raipur' && toCity === 'Korba')); const oneWayFare = isKorbaRaipurSedan ? 3000 : calculatedFare; const fare = tripType.value === 'roundTrip' ? oneWayFare * 2 : oneWayFare;
+      fareResult.innerHTML = `<strong>${fromCity} to ${toCity}</strong><span>${tripType.options[tripType.selectedIndex].text} estimate: <b>&#8377;${fare.toLocaleString('en-IN')}</b></span><small>Approx. ${distance} km by road &bull; ${vehicleName}</small>`;
+      routeBooking.href = `contact.html?from=${encodeURIComponent(fromCity)}&destination=${encodeURIComponent(toCity)}#booking`; routeBooking.classList.remove('pointer-events-none', 'opacity-50');
     }
-
     [fromSelect, toSelect, tripType, vehicle].forEach((control) => control.addEventListener('change', updateFare));
     updateFare();
   </script>

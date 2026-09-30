@@ -1,2 +1,914 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contact and Booking | Vikash Travels</title><script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="style.css"></head><body><div class="app-wrapper min-h-screen"><nav class="gradient-bg sticky top-0 z-50 shadow-2xl"><div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"><a href="index.html" class="text-2xl font-bold text-white">Vikash Travels <span class="block text-xs text-amber-400 font-medium">Your Journey, Our Priority</span></a><div class="hidden md:flex items-center gap-5 text-sm"><a href="index.html" class="text-white hover:text-amber-400">Home</a><a href="about.html" class="text-white hover:text-amber-400">About</a><a href="services.html" class="text-white hover:text-amber-400">Services</a><a href="fleet.html" class="text-white hover:text-amber-400">Fleet &amp; Pricing</a><a href="reviews.html" class="text-white hover:text-amber-400">Reviews</a><a href="contact.html" class="text-amber-400">Contact</a></div></div></nav><main><section class="inner-hero gradient-bg"><div class="max-w-4xl mx-auto px-4"><span class="eyebrow">Contact Vikash Travels</span><h1>Tell us where you need to go</h1><p>Call, message, email, or send your journey details through the booking form.</p></div></section><section class="py-16 bg-gray-50"><div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10"><div class="space-y-5"><div class="contact-page-card"><h2>Call us</h2><p>Speak with our team about availability, routes, vehicle choices, and fares.</p><a href="tel:+918770813605">+91 87708 13605</a><a href="tel:+919179978779">+91 91799 78779</a></div><div class="contact-page-card"><h2>Message or email</h2><p>WhatsApp is useful when you want to share a route, date, passenger count, or travel plan in writing.</p><a href="https://wa.me/918770813605" target="_blank" rel="noopener">Chat on WhatsApp</a><a href="mailto:vikashtravel@gmail.com">vikashtravel@gmail.com</a></div><div class="contact-page-card"><h2>Our base</h2><p>15 Block Ground, Korba, Chhattisgarh 495677. We serve local and outstation routes across the region.</p></div></div><div id="booking" class="bg-white rounded-3xl shadow-xl p-7 md:p-9"><h2 class="text-2xl font-bold text-gray-900 mb-2">Request a booking</h2><p class="text-gray-600 mb-6">Enter your route and timing. Your request will open WhatsApp with the details.</p><form id="bookingForm" class="space-y-5"><div><label for="source" class="block text-sm font-semibold text-gray-700 mb-2">Pickup location</label><input id="source" type="text" placeholder="For example, Korba" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" required></div><div><label for="destination" class="block text-sm font-semibold text-gray-700 mb-2">Destination</label><input id="destination" type="text" placeholder="For example, Raipur Airport" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" required></div><div class="grid grid-cols-2 gap-4"><div><label for="journeyDate" class="block text-sm font-semibold text-gray-700 mb-2">Date</label><input id="journeyDate" type="date" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" required></div><div><label for="journeyTime" class="block text-sm font-semibold text-gray-700 mb-2">Time</label><input id="journeyTime" type="time" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl" required></div></div><button type="submit" class="btn-primary w-full text-white font-bold py-4 rounded-xl">Send booking request</button></form><div id="bookingConfirmation" class="hidden"></div></div></div></section></main><footer class="gradient-bg py-10"><div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-sm"><div><h2 class="text-white text-xl font-bold mb-3">Vikash Travels</h2><p class="text-gray-400">Safe, comfortable, and affordable travel across Chhattisgarh.</p></div><div><h3 class="text-white font-semibold mb-3">Explore</h3><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="fleet.html">Fleet &amp; Pricing</a><a href="reviews.html">Reviews</a></div></div><div><h3 class="text-white font-semibold mb-3">Connect</h3><div class="footer-links"><a href="tel:+918770813605">Call us</a><a href="https://wa.me/918770813605" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:vikashtravel@gmail.com">Email us</a><a href="https://www.instagram.com/vikash_travels_" target="_blank" rel="noopener">Instagram</a></div></div></div><p class="copyright">© 2026 Vikash Travels. All rights reserved.</p></footer></div><script src="script.js"></script></body></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact & Booking | Vikash Travels</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .contact-hero {
+            background:
+                linear-gradient(135deg, rgba(8, 15, 35, 0.97), rgba(20, 35, 70, 0.94)),
+                radial-gradient(circle at top right, rgba(245, 158, 11, 0.25), transparent 35%);
+        }
+
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .icon-box {
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover .icon-box {
+            transform: scale(1.08);
+        }
+
+        .booking-panel {
+            box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
+        }
+
+        .form-input {
+            transition: all 0.2s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #f59e0b;
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.12);
+        }
+
+        .whatsapp-btn {
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(34, 197, 94, 0.25);
+        }
+
+        .step-line {
+            background: linear-gradient(
+                90deg,
+                #f59e0b,
+                #fbbf24,
+                #f59e0b
+            );
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-gray-900">
+
+<div class="app-wrapper min-h-screen">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="gradient-bg sticky top-0 z-50 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+
+            <div class="flex items-center justify-between">
+
+                <!-- Logo -->
+                <a href="index.html" class="text-2xl font-bold text-white">
+                    Vikash Travels
+                    <span class="block text-xs text-amber-400 font-medium tracking-wide">
+                        Your Journey, Our Priority
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+
+                    <a href="index.html"
+                       class="text-white hover:text-amber-400 transition">
+                        Home
+                    </a>
+
+                    <a href="about.html"
+                       class="text-white hover:text-amber-400 transition">
+                        About
+                    </a>
+
+                    <a href="services.html"
+                       class="text-white hover:text-amber-400 transition">
+                        Services
+                    </a>
+
+                    <a href="fleet.html"
+                       class="text-white hover:text-amber-400 transition">
+                        Fleet & Pricing
+                    </a>
+
+                    <a href="reviews.html"
+                       class="text-white hover:text-amber-400 transition">
+                        Reviews
+                    </a>
+
+                    <a href="contact.html"
+                       class="text-amber-400 font-bold">
+                        Contact
+                    </a>
+
+                </div>
+
+                <!-- Mobile Call Button -->
+                <a href="tel:+918770813605"
+                   class="md:hidden bg-amber-400 text-slate-950 px-4 py-2 rounded-full font-bold text-sm">
+                    Call
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+    <section class="contact-hero relative overflow-hidden">
+
+        <div class="absolute -top-24 -right-24 w-72 h-72 bg-amber-400/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-32 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-28">
+
+            <div class="max-w-3xl">
+
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full
+                            bg-amber-400/10 border border-amber-400/30
+                            text-amber-400 text-sm font-semibold mb-6">
+
+                    <span class="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></span>
+
+                    CONTACT VIKASH TRAVELS
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black
+                           text-white leading-tight">
+
+                    Let's Plan Your
+                    <span class="text-amber-400">Next Journey.</span>
+
+                </h1>
+
+                <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed">
+
+                    Need a cab for local travel, airport transfers, outstation trips,
+                    or business travel? Get in touch with our team and share your
+                    journey details.
+
+                </p>
+
+                <div class="flex flex-wrap gap-4 mt-8">
+
+                    <a href="#booking"
+                       class="bg-amber-400 hover:bg-amber-300 text-slate-950
+                              font-bold px-7 py-4 rounded-xl transition shadow-lg">
+
+                        Book Your Cab
+                    </a>
+
+                    <a href="https://wa.me/918770813605"
+                       target="_blank"
+                       rel="noopener"
+                       class="border border-white/20 hover:bg-white/10
+                              text-white font-semibold px-7 py-4 rounded-xl transition">
+
+                        WhatsApp Us
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= CONTACT OPTIONS ================= -->
+    <section class="py-16 md:py-20 bg-white">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+            <div class="text-center max-w-2xl mx-auto mb-12">
+
+                <p class="text-amber-500 uppercase tracking-widest
+                          font-bold text-sm mb-3">
+                    GET IN TOUCH
+                </p>
+
+                <h2 class="text-3xl md:text-4xl font-black text-slate-900">
+                    Choose How You Want to Connect
+                </h2>
+
+                <p class="text-gray-600 mt-4">
+                    Contact us directly and our team will help you with
+                    availability, routes, vehicle options and travel plans.
+                </p>
+
+            </div>
+
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <!-- CALL -->
+                <div class="contact-card bg-slate-50 border border-slate-200
+                            rounded-3xl p-7">
+
+                    <div class="icon-box w-14 h-14 rounded-2xl
+                                bg-amber-100 text-amber-600
+                                flex items-center justify-center text-2xl mb-6">
+
+                        📞
+                    </div>
+
+                    <p class="text-sm text-amber-600 font-bold uppercase tracking-wide">
+                        Call Us
+                    </p>
+
+                    <h3 class="text-2xl font-bold text-slate-900 mt-2">
+                        Speak With Us
+                    </h3>
+
+                    <p class="text-gray-600 mt-3 leading-relaxed">
+                        Talk to our team about your route, vehicle requirements,
+                        availability and fares.
+                    </p>
+
+                    <div class="mt-6 space-y-2">
+
+                        <a href="tel:+918770813605"
+                           class="block text-lg font-bold text-slate-900
+                                  hover:text-amber-500 transition">
+                            +91 87708 13605
+                        </a>
+
+                        <a href="tel:+919179978779"
+                           class="block text-lg font-bold text-slate-900
+                                  hover:text-amber-500 transition">
+                            +91 91799 78779
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WHATSAPP -->
+                <div class="contact-card bg-slate-50 border border-slate-200
+                            rounded-3xl p-7">
+
+                    <div class="icon-box w-14 h-14 rounded-2xl
+                                bg-green-100 text-green-600
+                                flex items-center justify-center text-2xl mb-6">
+
+                        💬
+                    </div>
+
+                    <p class="text-sm text-green-600 font-bold uppercase tracking-wide">
+                        WhatsApp
+                    </p>
+
+                    <h3 class="text-2xl font-bold text-slate-900 mt-2">
+                        Message Us
+                    </h3>
+
+                    <p class="text-gray-600 mt-3 leading-relaxed">
+                        Send your pickup, destination, date and passenger
+                        details directly on WhatsApp.
+                    </p>
+
+                    <a href="https://wa.me/918770813605"
+                       target="_blank"
+                       rel="noopener"
+                       class="whatsapp-btn inline-flex items-center justify-center
+                              mt-6 bg-green-500 hover:bg-green-600
+                              text-white font-bold px-5 py-3 rounded-xl">
+
+                        Chat on WhatsApp →
+                    </a>
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="contact-card bg-slate-50 border border-slate-200
+                            rounded-3xl p-7">
+
+                    <div class="icon-box w-14 h-14 rounded-2xl
+                                bg-blue-100 text-blue-600
+                                flex items-center justify-center text-2xl mb-6">
+
+                        ✉️
+                    </div>
+
+                    <p class="text-sm text-blue-600 font-bold uppercase tracking-wide">
+                        Email
+                    </p>
+
+                    <h3 class="text-2xl font-bold text-slate-900 mt-2">
+                        Write to Us
+                    </h3>
+
+                    <p class="text-gray-600 mt-3 leading-relaxed">
+                        Have a detailed travel requirement? Send us your
+                        enquiry and we'll get back to you.
+                    </p>
+
+                    <a href="mailto:vikashtravel@gmail.com"
+                       class="inline-block mt-6 text-blue-600 font-bold
+                              hover:text-blue-800 transition break-all">
+
+                        vikashtravel@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= BOOKING + INFO ================= -->
+    <section id="booking" class="py-16 md:py-24 bg-slate-100">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+            <div class="grid lg:grid-cols-5 gap-10 items-start">
+
+
+                <!-- LEFT INFORMATION -->
+                <div class="lg:col-span-2">
+
+                    <p class="text-amber-500 uppercase tracking-widest
+                              font-bold text-sm mb-3">
+                        BOOK WITH US
+                    </p>
+
+                    <h2 class="text-3xl md:text-4xl font-black
+                               text-slate-900 leading-tight">
+
+                        Your Ride Is
+                        <span class="text-amber-500">Just a Few Details Away.</span>
+
+                    </h2>
+
+                    <p class="text-gray-600 mt-5 leading-relaxed">
+
+                        Fill in your journey details and submit your request.
+                        The booking information will be prepared for WhatsApp
+                        so you can quickly connect with our team.
+
+                    </p>
+
+
+                    <!-- STEPS -->
+                    <div class="mt-10 space-y-7">
+
+                        <div class="flex gap-4">
+
+                            <div class="w-11 h-11 shrink-0 rounded-full
+                                        bg-amber-400 text-slate-950
+                                        flex items-center justify-center
+                                        font-black">
+
+                                1
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold text-slate-900">
+                                    Enter your route
+                                </h3>
+
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Tell us where you want to be picked up
+                                    and where you're going.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="flex gap-4">
+
+                            <div class="w-11 h-11 shrink-0 rounded-full
+                                        bg-amber-400 text-slate-950
+                                        flex items-center justify-center
+                                        font-black">
+
+                                2
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold text-slate-900">
+                                    Select date & time
+                                </h3>
+
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Share your preferred travel date and time.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="flex gap-4">
+
+                            <div class="w-11 h-11 shrink-0 rounded-full
+                                        bg-amber-400 text-slate-950
+                                        flex items-center justify-center
+                                        font-black">
+
+                                3
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold text-slate-900">
+                                    Send your request
+                                </h3>
+
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Your details will be sent through WhatsApp
+                                    for quick communication.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOCATION -->
+                    <div class="mt-10 bg-white rounded-3xl p-6
+                                border border-slate-200">
+
+                        <div class="flex gap-4">
+
+                            <div class="w-12 h-12 shrink-0 rounded-xl
+                                        bg-slate-900 text-amber-400
+                                        flex items-center justify-center text-xl">
+
+                                📍
+                            </div>
+
+                            <div>
+
+                                <p class="text-xs uppercase tracking-widest
+                                          font-bold text-amber-500">
+                                    Our Base
+                                </p>
+
+                                <h3 class="font-bold text-slate-900 mt-1">
+                                    Vikash Travels
+                                </h3>
+
+                                <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                                    15 Block Ground, Korba,<br>
+                                    Chhattisgarh 495677
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BOOKING FORM -->
+                <div class="lg:col-span-3">
+
+                    <div class="booking-panel bg-white rounded-3xl
+                                p-6 sm:p-8 md:p-10">
+
+                        <div class="flex items-start justify-between gap-4 mb-8">
+
+                            <div>
+
+                                <p class="text-amber-500 uppercase
+                                          tracking-widest font-bold text-xs">
+                                    QUICK BOOKING
+                                </p>
+
+                                <h2 class="text-2xl md:text-3xl font-black
+                                           text-slate-900 mt-2">
+
+                                    Request a Cab
+
+                                </h2>
+
+                                <p class="text-gray-600 mt-2">
+                                    Share your journey details below.
+                                </p>
+
+                            </div>
+
+                            <div class="hidden sm:flex w-14 h-14 rounded-2xl
+                                        bg-amber-100 text-amber-600
+                                        items-center justify-center text-2xl">
+
+                                🚕
+                            </div>
+
+                        </div>
+
+
+                        <form id="bookingForm" class="space-y-6">
+
+
+                            <!-- ROUTE -->
+                            <div>
+
+                                <label for="source"
+                                       class="block text-sm font-bold
+                                              text-slate-700 mb-2">
+
+                                    Pickup Location
+
+                                </label>
+
+                                <div class="relative">
+
+                                    <span class="absolute left-4 top-1/2
+                                                 -translate-y-1/2 text-amber-500">
+                                        ●
+                                    </span>
+
+                                    <input
+                                        id="source"
+                                        type="text"
+                                        placeholder="For example, Korba"
+                                        class="form-input w-full pl-10 pr-4 py-4
+                                               border-2 border-slate-200
+                                               rounded-xl bg-slate-50"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- DESTINATION -->
+                            <div>
+
+                                <label for="destination"
+                                       class="block text-sm font-bold
+                                              text-slate-700 mb-2">
+
+                                    Destination
+
+                                </label>
+
+                                <div class="relative">
+
+                                    <span class="absolute left-4 top-1/2
+                                                 -translate-y-1/2 text-red-500">
+                                        ●
+                                    </span>
+
+                                    <input
+                                        id="destination"
+                                        type="text"
+                                        placeholder="For example, Raipur Airport"
+                                        class="form-input w-full pl-10 pr-4 py-4
+                                               border-2 border-slate-200
+                                               rounded-xl bg-slate-50"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- DATE + TIME -->
+                            <div class="grid sm:grid-cols-2 gap-5">
+
+                                <div>
+
+                                    <label for="journeyDate"
+                                           class="block text-sm font-bold
+                                                  text-slate-700 mb-2">
+
+                                        Journey Date
+
+                                    </label>
+
+                                    <input
+                                        id="journeyDate"
+                                        type="date"
+                                        class="form-input w-full px-4 py-4
+                                               border-2 border-slate-200
+                                               rounded-xl bg-slate-50"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div>
+
+                                    <label for="journeyTime"
+                                           class="block text-sm font-bold
+                                                  text-slate-700 mb-2">
+
+                                        Journey Time
+
+                                    </label>
+
+                                    <input
+                                        id="journeyTime"
+                                        type="time"
+                                        class="form-input w-full px-4 py-4
+                                               border-2 border-slate-200
+                                               rounded-xl bg-slate-50"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- SUBMIT -->
+                            <button
+                                type="submit"
+                                class="w-full bg-slate-900 hover:bg-slate-800
+                                       text-white font-bold py-4 rounded-xl
+                                       transition duration-300
+                                       shadow-lg hover:shadow-xl">
+
+                                Send Booking Request on WhatsApp
+                                <span class="ml-2 text-amber-400">→</span>
+
+                            </button>
+
+
+                            <p class="text-xs text-center text-gray-500">
+
+                                Your booking details will be prepared for
+                                WhatsApp communication.
+
+                            </p>
+
+                        </form>
+
+
+                        <!-- EXISTING JS TARGET -->
+                        <div id="bookingConfirmation" class="hidden mt-6"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHY CONTACT US ================= -->
+    <section class="py-16 md:py-20 bg-white">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="text-center px-5">
+
+                    <div class="w-16 h-16 mx-auto rounded-2xl
+                                bg-amber-100 text-amber-600
+                                flex items-center justify-center text-2xl">
+
+                        🚕
+                    </div>
+
+                    <h3 class="text-xl font-bold mt-5">
+                        Flexible Travel
+                    </h3>
+
+                    <p class="text-gray-600 mt-2">
+                        Share your travel requirements and discuss the
+                        journey that works for you.
+                    </p>
+
+                </div>
+
+
+                <div class="text-center px-5">
+
+                    <div class="w-16 h-16 mx-auto rounded-2xl
+                                bg-blue-100 text-blue-600
+                                flex items-center justify-center text-2xl">
+
+                        🗺️
+                    </div>
+
+                    <h3 class="text-xl font-bold mt-5">
+                        Local & Outstation
+                    </h3>
+
+                    <p class="text-gray-600 mt-2">
+                        Contact us for local travel as well as longer
+                        outstation journeys.
+                    </p>
+
+                </div>
+
+
+                <div class="text-center px-5">
+
+                    <div class="w-16 h-16 mx-auto rounded-2xl
+                                bg-green-100 text-green-600
+                                flex items-center justify-center text-2xl">
+
+                        💬
+                    </div>
+
+                    <h3 class="text-xl font-bold mt-5">
+                        Easy Communication
+                    </h3>
+
+                    <p class="text-gray-600 mt-2">
+                        Call, WhatsApp or email us with your travel
+                        requirements.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FINAL CTA ================= -->
+    <section class="gradient-bg py-16">
+
+        <div class="max-w-5xl mx-auto px-4 text-center">
+
+            <p class="text-amber-400 font-bold uppercase
+                      tracking-widest text-sm">
+
+                READY TO TRAVEL?
+
+            </p>
+
+            <h2 class="text-3xl md:text-4xl font-black text-white mt-3">
+
+                Have a Journey in Mind?
+
+            </h2>
+
+            <p class="text-gray-300 mt-4 max-w-2xl mx-auto">
+
+                Tell us your route and travel requirements.
+                We'll help you get started.
+
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+
+                <a href="tel:+918770813605"
+                   class="bg-amber-400 hover:bg-amber-300
+                          text-slate-950 font-bold px-7 py-4
+                          rounded-xl transition">
+
+                    📞 Call Us
+
+                </a>
+
+                <a href="https://wa.me/918770813605"
+                   target="_blank"
+                   rel="noopener"
+                   class="bg-white/10 hover:bg-white/20
+                          border border-white/20
+                          text-white font-bold px-7 py-4
+                          rounded-xl transition">
+
+                    💬 WhatsApp Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="gradient-bg border-t border-white/10 py-10">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+            <div class="grid md:grid-cols-3 gap-8 text-sm">
+
+                <!-- BRAND -->
+                <div>
+
+                    <h2 class="text-white text-xl font-bold mb-3">
+                        Vikash Travels
+                    </h2>
+
+                    <p class="text-gray-400 leading-relaxed">
+                        Safe, comfortable, and affordable travel across
+                        Chhattisgarh and beyond.
+                    </p>
+
+                </div>
+
+
+                <!-- EXPLORE -->
+                <div>
+
+                    <h3 class="text-white font-semibold mb-4">
+                        Explore
+                    </h3>
+
+                    <div class="footer-links flex flex-col gap-2">
+
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="services.html">Services</a>
+                        <a href="fleet.html">Fleet & Pricing</a>
+                        <a href="reviews.html">Reviews</a>
+                        <a href="contact.html">Contact</a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONNECT -->
+                <div>
+
+                    <h3 class="text-white font-semibold mb-4">
+                        Connect With Us
+                    </h3>
+
+                    <div class="footer-links flex flex-col gap-2">
+
+                        <a href="tel:+918770813605">
+                            📞 +91 87708 13605
+                        </a>
+
+                        <a href="https://wa.me/918770813605"
+                           target="_blank"
+                           rel="noopener">
+                            💬 WhatsApp
+                        </a>
+
+                        <a href="mailto:vikashtravel@gmail.com">
+                            ✉️ vikashtravel@gmail.com
+                        </a>
+
+                        <a href="https://www.instagram.com/vikash_travels_"
+                           target="_blank"
+                           rel="noopener">
+                            📷 Instagram
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="border-t border-white/10 mt-8 pt-6 text-center">
+
+                <p class="text-gray-500 text-sm">
+                    © 2026 Vikash Travels. All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<!-- EXISTING JAVASCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>

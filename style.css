@@ -254,6 +254,117 @@ nav .max-w-7xl {
 .about-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-radius: 1.5rem; background: #16213e; padding: 2.5rem 3rem; }
 .about-cta-inner h2 { margin-top: 0.8rem; color: #fff; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.1; font-weight: 800; }
 
+.services-hero { overflow: hidden; padding: 5.5rem 0 6rem; }
+.services-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr); gap: 5rem; align-items: center; }
+.services-hero-copy h1 { max-width: 680px; margin: 1rem 0 1.25rem; color: #fff; font-size: clamp(2.8rem, 6vw, 5.4rem); line-height: 1.02; font-weight: 800; }
+.services-hero-copy p { max-width: 590px; margin-bottom: 2rem; color: #d1d5db; font-size: 1.15rem; line-height: 1.8; }
+.services-hero-image { position: relative; max-width: 500px; margin-left: auto; }
+.services-hero-image img { display: block; width: 100%; aspect-ratio: 4 / 3; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 1.75rem; object-fit: cover; box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28); transform: rotate(2deg); }
+.services-hero-badge { position: absolute; right: -1.5rem; bottom: 1.5rem; display: grid; gap: 0.25rem; max-width: 220px; padding: 1rem 1.15rem; border-left: 4px solid #f59e0b; border-radius: 0.8rem; background: #fff; box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22); }
+.services-hero-badge strong { color: #111827; font-size: 0.95rem; }
+.services-hero-badge span { color: #6b7280; font-size: 0.78rem; line-height: 1.45; }
+.services-intro-section { padding: 5rem 0 3rem; background: #fff; }
+.services-intro-grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(280px, 1.15fr); gap: 6rem; align-items: end; }
+.services-intro-copy { max-width: 580px; color: #6b7280; font-size: 1.1rem; line-height: 1.85; }
+.services-list-section { padding: 3rem 0 6rem; background: #fff; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.service-feature { display: flex; flex-direction: column; min-height: 360px; border: 1px solid #e5e7eb; border-radius: 1.25rem; background: #fff; padding: 1.75rem; box-shadow: 0 10px 28px rgba(15, 52, 96, 0.07); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.service-feature:hover { transform: translateY(-5px); box-shadow: 0 18px 38px rgba(15, 52, 96, 0.13); }
+.service-number { color: #d97706; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; }
+.service-icon { display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; margin: 1.35rem 0 1.25rem; border-radius: 0.9rem; background: #fef3c7; color: #b45309; font-size: 1.5rem; font-weight: 700; }
+.service-feature h2 { margin-bottom: 0.75rem; color: #111827; font-size: 1.35rem; font-weight: 700; }
+.service-feature p { color: #6b7280; line-height: 1.75; }
+.service-feature a { margin-top: auto; padding-top: 1.25rem; color: #b45309; font-size: 0.88rem; font-weight: 700; }
+.service-feature a:hover { color: #92400e; }
+.services-process-section { padding: 6rem 0; background: #f8fafc; }
+.services-process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+.services-process-grid > div { border-top: 3px solid #f59e0b; padding: 1.5rem 0.5rem 0; }
+.services-process-grid span { color: #d97706; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; }
+.services-process-grid h3 { margin: 1.2rem 0 0.65rem; color: #111827; font-size: 1.25rem; font-weight: 700; }
+.services-process-grid p { max-width: 320px; color: #6b7280; line-height: 1.75; }
+.services-cta-section { padding: 4rem 0; background: #fff; }
+.services-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-radius: 1.5rem; background: #16213e; padding: 2.5rem 3rem; }
+.services-cta-inner h2 { margin: 0.8rem 0 0.5rem; color: #fff; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.1; font-weight: 800; }
+.services-cta-inner p { color: #d1d5db; }
+
+.pricing-hero { overflow: hidden; padding: 5.5rem 0 6rem; }
+.pricing-hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr); gap: 5rem; align-items: center; }
+.pricing-hero-copy h1 { max-width: 700px; margin: 1rem 0 1.25rem; color: #fff; font-size: clamp(2.8rem, 6vw, 5.4rem); line-height: 1.02; font-weight: 800; }
+.pricing-hero-copy p { max-width: 600px; color: #d1d5db; font-size: 1.15rem; line-height: 1.8; }
+.pricing-hero-points { display: grid; gap: 0.7rem; margin-top: 2rem; color: #fbbf24; font-size: 0.9rem; font-weight: 600; }
+.pricing-hero-points span::before { content: "✓"; display: inline-block; margin-right: 0.6rem; color: #fff; }
+.pricing-hero-mark { display: grid; justify-items: center; align-content: center; width: min(100%, 360px); aspect-ratio: 1; margin-left: auto; border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 50%; background: radial-gradient(circle, rgba(245, 158, 11, 0.25), rgba(15, 52, 96, 0.15) 55%, transparent 56%); color: #fff; }
+.pricing-hero-mark span { color: #fbbf24; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.3em; }
+.pricing-hero-mark strong { font-size: clamp(2.7rem, 6vw, 4.8rem); line-height: 1; }
+.pricing-hero-mark small { margin-top: 1rem; color: #d1d5db; font-size: 0.85rem; }
+.pricing-calculator-section { padding: 5.5rem 0; background: #fff; }
+.pricing-section-heading { max-width: 650px; margin-bottom: 2.5rem; }
+.pricing-section-heading h2 { margin: 0.9rem 0 0.8rem; color: #111827; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1; font-weight: 800; }
+.pricing-section-heading p { color: #6b7280; line-height: 1.8; }
+.pricing-section-heading.centered { margin-right: auto; margin-left: auto; text-align: center; }
+.pricing-calculator-layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr); gap: 1.5rem; align-items: stretch; }
+.pricing-calculator { border: 1px solid #e5e7eb; border-radius: 1.5rem; background: #fff; padding: 2rem; box-shadow: 0 18px 45px rgba(15, 52, 96, 0.1); }
+.pricing-form-heading { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+.pricing-step { color: #d97706; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; }
+.pricing-form-heading h3 { color: #111827; font-size: 1.35rem; font-weight: 700; }
+.pricing-form-heading p { color: #6b7280; font-size: 0.88rem; }
+.pricing-side-note { border-radius: 1.5rem; background: #16213e; padding: 2rem; color: #fff; }
+.pricing-side-note h3 { margin: 1.1rem 0 0.7rem; font-size: 1.45rem; font-weight: 700; }
+.pricing-side-note p { color: #d1d5db; line-height: 1.7; }
+.pricing-side-note ul { display: grid; gap: 0.8rem; margin: 1.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.12); border-bottom: 1px solid rgba(255, 255, 255, 0.12); padding: 1.25rem 0; color: #d1d5db; font-size: 0.88rem; }
+.pricing-side-note li::before { content: "•"; margin-right: 0.6rem; color: #fbbf24; }
+.pricing-side-note a { color: #fbbf24; font-weight: 700; }
+.pricing-side-note a:hover { color: #fff; }
+.india-booking-query { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 2rem; border-radius: 1.5rem; background: #fffbeb; padding: 2rem 2.25rem; }
+.india-booking-query h3 { margin: 0.8rem 0 0.5rem; color: #111827; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; }
+.india-booking-query p { max-width: 650px; color: #6b7280; line-height: 1.7; }
+.india-booking-actions { display: flex; flex-shrink: 0; flex-wrap: wrap; align-items: center; gap: 1rem; }
+.india-whatsapp-link { color: #15803d; font-weight: 700; }
+.india-whatsapp-link:hover { color: #166534; }
+.pricing-vehicles-section { padding: 6rem 0; background: #f8fafc; }
+.pricing-vehicle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.pricing-vehicle-grid article { border-top: 3px solid #f59e0b; padding: 1.5rem 0.5rem 0; }
+.pricing-vehicle-label { color: #b45309; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; }
+.pricing-vehicle-grid h3 { margin: 0.8rem 0 0.6rem; color: #111827; font-size: 1.4rem; font-weight: 700; }
+.pricing-vehicle-grid p { max-width: 310px; color: #6b7280; line-height: 1.75; }
+.pricing-note-section { padding: 4rem 0; background: #fff; }
+
+.reviews-hero { overflow: hidden; padding: 5.5rem 0 6rem; }
+.reviews-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr); gap: 5rem; align-items: center; }
+.reviews-hero-copy h1 { max-width: 680px; margin: 1rem 0 1.25rem; color: #fff; font-size: clamp(2.8rem, 6vw, 5.4rem); line-height: 1.02; font-weight: 800; }
+.reviews-hero-copy p { max-width: 590px; margin-bottom: 2rem; color: #d1d5db; font-size: 1.15rem; line-height: 1.8; }
+.reviews-rating-panel { display: grid; justify-items: center; gap: 0.6rem; width: min(100%, 320px); margin-left: auto; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 1.5rem; background: rgba(255, 255, 255, 0.08); padding: 2.5rem 1.5rem; color: #fff; }
+.reviews-rating-panel strong { color: #fbbf24; font-size: 5rem; line-height: 1; }
+.reviews-stars { color: #fbbf24; font-size: 1.35rem; letter-spacing: 0.12em; }
+.reviews-rating-panel span { color: #d1d5db; font-size: 0.85rem; }
+.reviews-trust-strip { background: #f59e0b; color: #451a03; }
+.reviews-trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding: 1.25rem 1rem; }
+.reviews-trust-grid div { display: grid; gap: 0.2rem; border-left: 1px solid rgba(69, 26, 3, 0.25); padding-left: 1rem; }
+.reviews-trust-grid div:first-child { border-left: 0; padding-left: 0; }
+.reviews-trust-grid strong { font-size: 0.92rem; }
+.reviews-trust-grid span { color: #78350f; font-size: 0.74rem; }
+.reviews-list-section { padding: 6rem 0; background: #fff; }
+.reviews-section-heading { max-width: 650px; margin-bottom: 2.5rem; }
+.reviews-section-heading h2 { margin: 0.9rem 0 0.8rem; color: #111827; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1; font-weight: 800; }
+.reviews-section-heading > p { color: #6b7280; line-height: 1.8; }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.reviews-grid > * { min-height: 280px; border: 1px solid #e5e7eb; border-radius: 1.25rem; background: #fff; padding: 1.5rem; box-shadow: 0 10px 28px rgba(15, 52, 96, 0.07); }
+.review-form-section { padding: 6rem 0; background: #f8fafc; }
+.review-form-layout { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 5rem; align-items: start; }
+.review-form-card { border: 1px solid #e5e7eb; border-radius: 1.5rem; background: #fff; padding: 2rem; box-shadow: 0 18px 45px rgba(15, 52, 96, 0.1); }
+.review-form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+.review-form-grid label { display: block; margin-bottom: 0.5rem; color: #374151; font-size: 0.88rem; font-weight: 700; }
+.review-form-grid input, .review-form-grid textarea { width: 100%; border: 2px solid #e5e7eb; border-radius: 0.75rem; background: #fff; padding: 0.8rem 1rem; color: #374151; outline: none; }
+.review-form-grid input:focus, .review-form-grid textarea:focus { border-color: #f59e0b; }
+.review-rating-field, .review-text-field, .review-form-grid > button { grid-column: 1 / -1; }
+.review-star-picker { display: flex; gap: 0.25rem; }
+.review-star-picker .star-btn { cursor: pointer; font-size: 1.8rem; line-height: 1; }
+.review-star-picker .star-btn:hover { color: #f59e0b; }
+#ratingLabel { display: block; margin-top: 0.4rem; color: #6b7280; font-size: 0.8rem; }
+.review-form-note { display: flex; gap: 0.75rem; margin-top: 2rem; border-left: 3px solid #f59e0b; padding-left: 1rem; }
+.review-form-note span { color: #15803d; font-weight: 800; }
+.review-form-note p { color: #6b7280; font-size: 0.88rem; line-height: 1.6; }
+
 .eyebrow {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -545,6 +656,42 @@ nav .max-w-7xl {
   .about-values-grid { grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; }
   .about-value { min-height: auto; }
   .about-cta-inner { align-items: flex-start; flex-direction: column; padding: 2rem 1.5rem; }
+  .services-hero { padding: 4.2rem 0 4.5rem; }
+  .services-hero-grid, .services-intro-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .services-hero-copy h1 { font-size: clamp(2.5rem, 13vw, 3.8rem); }
+  .services-hero-copy p { font-size: 1rem; }
+  .services-hero-image { max-width: 340px; margin: 0 auto; }
+  .services-hero-badge { right: -0.5rem; bottom: 1rem; }
+  .services-intro-section { padding: 4rem 0 2rem; }
+  .services-intro-copy { font-size: 1rem; }
+  .services-list-section { padding: 2rem 0 4rem; }
+  .services-grid, .services-process-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .service-feature { min-height: 330px; }
+  .services-process-section { padding: 4rem 0; }
+  .services-cta-inner { align-items: flex-start; flex-direction: column; padding: 2rem 1.5rem; }
+  .pricing-hero { padding: 4.2rem 0 4.5rem; }
+  .pricing-hero-grid, .pricing-calculator-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .pricing-hero-copy h1 { font-size: clamp(2.5rem, 13vw, 3.8rem); }
+  .pricing-hero-copy p { font-size: 1rem; }
+  .pricing-hero-mark { width: min(100%, 260px); margin: 0 auto; }
+  .pricing-calculator-section { padding: 4rem 0; }
+  .pricing-calculator { padding: 1.25rem; }
+  .india-booking-query { align-items: flex-start; flex-direction: column; padding: 1.5rem; }
+  .india-booking-actions { align-items: flex-start; flex-direction: column; }
+  .pricing-vehicles-section { padding: 4rem 0; }
+  .pricing-vehicle-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .pricing-note-section { padding: 2.5rem 0; }
+  .reviews-hero { padding: 4.2rem 0 4.5rem; }
+  .reviews-hero-grid, .review-form-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .reviews-hero-copy h1 { font-size: clamp(2.5rem, 13vw, 3.8rem); }
+  .reviews-hero-copy p { font-size: 1rem; }
+  .reviews-rating-panel { width: min(100%, 280px); margin: 0 auto; }
+  .reviews-trust-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .reviews-trust-grid div:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .reviews-list-section, .review-form-section { padding: 4rem 0; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .review-form-card { padding: 1.25rem; }
+  .review-form-grid { grid-template-columns: 1fr; }
 
   #home .grid,
   #booking .grid,
