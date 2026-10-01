@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initializeMobileNavigation() {
   const nav = document.querySelector('nav');
   if (!nav) return;
 
@@ -39,7 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
       toggle.setAttribute('aria-expanded', 'false');
     }
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeMobileNavigation, { once: true });
+} else {
+  initializeMobileNavigation();
+}
 
 /* ---------- CONFIG ---------- */
 const defaultConfig = {

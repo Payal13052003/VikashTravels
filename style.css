@@ -82,6 +82,29 @@ h1, h2, h3, h4, h5, h6, p, a, span, button, input, select, label {
   color: #fbbf24;
 }
 
+footer h2.text-white.text-xl.font-bold.mb-3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+footer h2.text-white.text-xl.font-bold.mb-3::before {
+  content: "";
+  flex: 0 0 3.25rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 9999px;
+  background: #fff url("images/Logo.png") center / contain no-repeat;
+}
+
+footer a {
+  overflow-wrap: anywhere;
+}
+
+.text-blue-600.font-semibold {
+  overflow-wrap: anywhere;
+}
+
 nav {
   backdrop-filter: blur(10px);
 }
@@ -121,6 +144,16 @@ nav .max-w-7xl {
   .mobile-nav-links a {
     padding: 0.75rem 0.8rem;
     font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  nav .hidden.md\:flex {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex;
   }
 }
 
